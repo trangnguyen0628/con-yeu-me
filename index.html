@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mum Birthday 2021</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="help">Mẹ hãy nhấn vào thiệp để mở và nhấp bên ngoài để đóng nhé!</h1>
+      <div class="card">
+        <!-- Back of cover -->
+        <div class="back">
+          <img src="{{ url_for('static', filename='images/mum_2021.jpg') }}" alt="" />
+        </div>
+
+        <!-- Front of cover -->
+        <div class="front">
+          <h1>Happy Birthday Mum! <i class="fas fa-gifts"></i></h1>
+          <div class="cake">
+            <div class="plate"></div>
+            <div class="layer layer-bottom"></div>
+            <div class="layer layer-middle"></div>
+            <div class="layer layer-top"></div>
+            <div class="icing"></div>
+            <div class="drip drip1"></div>
+            <div class="drip drip2"></div>
+            <div class="drip drip3"></div>
+            <div class="candle">
+              <div class="flame"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Inside wish -->
+        <div class="wish">
+          <p id="head">Chúc mừng sinh nhật mẹ yêu! <i class="fas fa-gift"></i></p>
+          <p>Wish here</p>
+          <p>Wish here</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelector(".card").addEventListener("click", () => {
+        document.querySelector(".back").classList.toggle("open");
+        document.querySelector(".front").classList.toggle("open");
+        document.querySelector(".flame").classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>
