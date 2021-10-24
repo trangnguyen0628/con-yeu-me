@@ -1,10 +1,8 @@
 /* Card adapted from Dylan Gallardo's Birthday Card (https://codepen.io/CriticalMammal/pen/RPdOep)*/
-@import url(https://fonts.googleapis.com/css?family=Nobile:400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Great+Vibes&family=Parisienne);
 
 :root {
-  --border-color: #73bfb5;
-  --vanilla-color: #f0e4d0;
-  --chocolate-color: #553c13;
+  --border-color: #f3da95;
 }
 
 html,
@@ -14,7 +12,6 @@ body {
   background-color: #e3e3e3;
   width: 100%;
   height: 100%;
-  font-family: "Nobile", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -33,7 +30,7 @@ body {
   font-size: large;
   margin: 0 auto;
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Great Vibes", cursive;
 }
 
 .card {
@@ -43,29 +40,84 @@ body {
   border: 10px solid var(--border-color);
   margin: 30px auto 0 auto;
   box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
-  background-color: rgb(230, 240, 230);
+  background-color: rgb(247, 238, 197);
+  font-family: inherit;
 }
 
-.wish {
+.page1 {
+  position: absolute;
   width: 100%;
   height: 100%;
-  margin: auto;
+  margin: -10px 0px 0px -10px;
+  border: 10px solid var(--border-color);
+  backface-visibility: hidden;
+  background-color: rgb(247, 238, 197);
+  background-size: contain;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: perspective(800px) rotateY(0deg);
+  transition: all 0.8s ease-in-out;
+}
+
+.page1 span{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-family: "Great Vibes", cursive;
+}
+
+.page1.open {
+  transform: perspective(800px) rotateY(-170deg);
+  -ms-transform: perspective(800px) rotateY(-170deg);
+  -webkit-transform: perspective(800px) rotateY(-170deg);
+}
+
+.page1-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 10px solid var(--border-color);
+  margin: -10px 0px 0px -10px;
+  backface-visibility: visible;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: perspective(800px) rotateY(0deg);
+  transition: all 0.8s ease-in-out;
+  background-color: rgb(247, 238, 197);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.page1-back.open {
+  transform: perspective(800px) rotateY(-170deg);
+  -ms-transform: perspective(800px) rotateY(-170deg);
+  -webkit-transform: perspective(800px) rotateY(-170deg);
+  box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.3), inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  background-color: rgb(247, 238, 197);
+}
+
+.page2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 #head {
-  font-size: 1.5em;
-  margin: 30px auto;
-  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-left: 20px;
+  font-family: "Great Vibes", cursive;
 }
 
 p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.4;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Great Vibes", cursive;
   color: #331717;
   text-align: justify;
   text-justify: inter-word;
-  margin: 20px 10px;
+  margin: 10px 10px;
 }
 
 .front {
@@ -75,7 +127,7 @@ p {
   margin: -10px 0px 0px -10px;
   border: 10px solid var(--border-color);
   backface-visibility: hidden;
-  background-color: rgb(197, 245, 247);
+  background-color: rgb(247, 238, 197);
   background-size: contain;
   transform-style: preserve-3d;
   transform-origin: 0% 50%;
@@ -84,8 +136,14 @@ p {
 }
 
 .front h1 {
+  font-family: "Great Vibes", cursive;
   text-align: center;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+}
+
+.front h1 span {
+  font-style: italic;
+  font-size: 40px;
 }
 
 .back {
@@ -100,7 +158,7 @@ p {
   transform-origin: 0% 50%;
   transform: perspective(800px) rotateY(0deg);
   transition: all 0.8s ease-in-out;
-  background-color: rgb(230, 240, 230);
+  background-color: rgb(247, 238, 197);
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
@@ -123,7 +181,7 @@ p {
   -ms-transform: perspective(800px) rotateY(-170deg);
   -webkit-transform: perspective(800px) rotateY(-170deg);
   box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.3), inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
-  background-color: rgb(210, 220, 210);
+  background-color: rgb(247, 238, 197);
 }
 
 /* Cake adapted from Mark Thomes CSS Birthday Cake (https://codepen.io/WithAnEs/pen/OVZRvg). SCSS compiled to CSS */
